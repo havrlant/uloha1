@@ -17,7 +17,7 @@ var saveQueries = function(trackFilePath, queries, io, callback) {
   });
 };
 
-// Inkrementuje hodnotu v Redis pod klicem key o hodnotu query
+// Inkrementuje hodnotu v Redis pod klicem key o hodnotu query[key]
 var increment = function(query, dbClient, key, callback) {
   var count = query[key];
   if (count) {
