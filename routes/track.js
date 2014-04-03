@@ -56,7 +56,7 @@ io:             Objekt obsahujici funkce pro praci se soubory pod
 var getTrackRoute = function(trackFilePath, dbClient, io) {
   return function(req, res, next) {
     var doneCounter = 0;
-    renderData = {};
+    var renderData = {};
     saveQueries(trackFilePath, req.query, io, function(err) {
       renderData.queries = req.query;
       renderData.isQueriesEmpty = Object.keys(req.query).length === 0;
