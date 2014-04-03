@@ -1,0 +1,17 @@
+include header.jade
+if isQueriesEmpty
+  p Přidejte do URL nějaké parametry, jinak se nic nestane. Například 
+    +link("?a=1&b=2", "tyto parametry")
+    | .
+else
+  p Zapsal jsem do souboru tyto hodnoty:
+    ul 
+      each val, key in queries
+        li= key + ': ' + val
+
+if queries.count
+  p V parametrech byl i parametr 
+    code count
+    |  Aktualizoval jsem hodnotu v databázi. Současná hodnota je: 
+    strong= count
+    | .
